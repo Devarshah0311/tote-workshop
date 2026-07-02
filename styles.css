@@ -214,7 +214,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--ink);
   margin: 0 0 1.5rem;
 }
-.hero__tagline em {
+.italic {
   color: var(--terracotta);
   font-style: normal;
   font-weight: 700;
@@ -238,6 +238,12 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   color: var(--ink);
 }
 .chip__ico { font-size: 1rem; }
+.chip--price {
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 500;
+}
+.chip--price .chip__ico { filter: brightness(1.15); }
 
 .hero__cta {
   display: flex;
@@ -395,6 +401,7 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
+.detail--wide { grid-column: 1 / -1; }
 .detail {
   display: flex;
   gap: .85rem;
@@ -739,12 +746,19 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   box-shadow: 0 0 0 4px rgba(201,123,90,.15);
 }
 .contact__form button { justify-self: start; }
-.contact__sent {
+.contact__form button:disabled {
+  opacity: .6;
+  cursor: wait;
+  transform: none;
+}
+.contact__sent,
+.contact__err {
   margin: 0;
-  color: var(--sage-dark);
   font-family: var(--font-script);
   font-size: 1.3rem;
 }
+.contact__sent { color: var(--sage-dark); }
+.contact__err  { color: #B04B34; }
 
 /* ----------  footer  ---------- */
 .foot {
@@ -839,4 +853,110 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
   .event__tag { grid-column: 2; justify-self: start; }
   .nav__brand-name { font-size: 1rem; }
   .flora--tl, .flora--br { width: 90px; height: 90px; }
+}
+
+/* ==========================================================
+   VIDEO FALLBACK
+   ========================================================== */
+.peek__fallback {
+  max-width: 340px;
+  margin: 0 auto;
+  text-align: center;
+}
+.peek__fallback img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.28);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.peek__fallback-note {
+  margin: 1rem 0 0;
+  font-family: var(--font-script);
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+/* when JS reveals fallback, hide the original video wrap chrome */
+.peek__video-wrap.is-fallback {
+  padding: 1.5rem;
+}
+.peek__video-wrap.is-fallback .peek__video { display: none; }
+
+/* ==========================================================
+   MOBILE STICKY BOTTOM BAR
+   ========================================================== */
+.stickybar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom));
+  gap: .75rem;
+  align-items: center;
+  box-shadow: 0 -6px 24px rgba(0,0,0,.25);
+  border-top: 1px solid rgba(250,243,230,.08);
+}
+.stickybar__meta {
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+  line-height: 1.2;
+  flex: 1;
+  min-width: 0;
+}
+.stickybar__date { font-weight: 500; }
+.stickybar__price {
+  opacity: .7;
+  font-size: .72rem;
+  margin-top: .15rem;
+}
+.stickybar__cta {
+  background: var(--terracotta);
+  color: var(--white);
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .2s ease;
+}
+.stickybar__cta:hover { background: var(--terracotta-2); }
+
+@media (max-width: 720px) {
+  .stickybar { display: flex; }
+  body { padding-bottom: 80px; }
+}
+
+/* ==========================================================
+   ACCESSIBILITY — focus states + reduced motion
+   ========================================================== */
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.btn:focus-visible,
+.nav__link--cta:focus-visible,
+.stickybar__cta:focus-visible {
+  outline-offset: 3px;
+}
+.nav__link:focus-visible {
+  outline-color: var(--blush);
+  outline-offset: 4px;
+}
+.card:focus-within { box-shadow: var(--shadow-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
 }

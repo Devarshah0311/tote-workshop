@@ -3,8 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tote Painting Workshop by notyour.regularsaga — create a tote that's TOTE-ally you. 5th July, Rangrez Art Studio." />
-  <title>Tote Painting Workshop · Create a tote that's TOTE-ally you</title>
+  <meta name="theme-color" content="#141414" />
+  <meta name="description" content="Tote Painting Workshop by notyour.regularsaga — create a tote that's TOTE-ally you. 5th July 2026, Rangrez Art Studio, Ahmedabad. All materials included." />
+
+  <title>Tote Painting Workshop · notyour.regularsaga</title>
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="notyour.regularsaga" />
+  <meta property="og:title" content="Tote Painting Workshop · 5th July 2026" />
+  <meta property="og:description" content="Create a tote that's TOTE-ally you. A slow Sunday of paint, brushes, and blank canvas totes at Rangrez Art Studio, Ahmedabad. All materials included." />
+  <meta property="og:image" content="https://tote-workshop.vercel.app/assets/images/poster.jpg" />
+  <meta property="og:image:width" content="900" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:url" content="https://tote-workshop.vercel.app/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tote Painting Workshop · 5th July 2026" />
+  <meta name="twitter:description" content="Create a tote that's TOTE-ally you. All materials included. Rangrez Art Studio, Ahmedabad." />
+  <meta name="twitter:image" content="https://tote-workshop.vercel.app/assets/images/poster.jpg" />
+
+  <!-- Favicon (inline SVG so no extra file is needed) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23C97B5A'%3ET%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,18 +39,18 @@
   <header class="nav" id="top">
     <div class="nav__inner">
       <a href="#top" class="nav__brand">
-        <span class="nav__brand-mark">◐</span>
+        <span class="nav__brand-mark" aria-hidden="true">◐</span>
         <span class="nav__brand-name">notyour.regularsaga</span>
       </a>
 
-      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav__menu" id="navMenu">
+      <nav class="nav__menu" id="navMenu" aria-label="Primary">
         <a href="#hero" class="nav__link">Home</a>
         <a href="#events" class="nav__link">Upcoming Events</a>
-        <a href="#gallery" class="nav__link">Workshops</a>
+        <a href="#workshops" class="nav__link">Workshops</a>
         <a href="#partnerships" class="nav__link">Partnerships</a>
         <a href="#about-us" class="nav__link">About</a>
         <a href="#contact" class="nav__link nav__link--cta">Contact</a>
@@ -39,7 +60,6 @@
 
   <!-- ================= HERO ================= -->
   <section class="hero" id="hero">
-    <!-- floral decorations -->
     <svg class="flora flora--tl" viewBox="0 0 120 120" aria-hidden="true">
       <use href="#flora-sprig" />
     </svg>
@@ -55,22 +75,32 @@
           <span class="hero__title-2">Painting</span>
           <span class="hero__title-3">Workshop</span>
         </h1>
-        <p class="hero__tagline">create a tote that's <em>TOTE-ally</em> you</p>
+        <p class="hero__tagline">create a tote that's <span class="italic">TOTE-ally</span> you</p>
 
         <div class="hero__meta">
-          <div class="chip"><span class="chip__ico">📅</span><span>5<sup>th</sup> July</span></div>
-          <div class="chip"><span class="chip__ico">⏰</span><span>11 AM – 1 PM</span></div>
-          <div class="chip"><span class="chip__ico">👥</span><span>16+ Age Group</span></div>
+          <div class="chip"><span class="chip__ico" aria-hidden="true">📅</span><span>5<sup>th</sup> July 2026</span></div>
+          <div class="chip"><span class="chip__ico" aria-hidden="true">⏰</span><span>11 AM – 1 PM</span></div>
+          <div class="chip"><span class="chip__ico" aria-hidden="true">👥</span><span>16+ Age Group</span></div>
+          <!-- price: update the ₹ value in one place if it changes -->
+          <div class="chip chip--price"><span class="chip__ico" aria-hidden="true">🎟️</span><span>₹499 per person · all materials included</span></div>
         </div>
 
         <div class="hero__cta">
-          <a href="#contact" class="btn btn--primary">DM to Register</a>
+          <a href="https://ig.me/m/notyour.regularsaga" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+            DM to Register <span aria-hidden="true">↗</span>
+          </a>
           <a href="#about" class="btn btn--ghost">What's included ↓</a>
         </div>
       </div>
 
       <div class="hero__poster">
-        <img src="assets/images/poster.jpg" alt="Tote Painting Workshop poster" />
+        <img
+          src="/assets/images/poster.jpg"
+          alt="Tote Painting Workshop poster — 5th July 2026 at Rangrez Art Studio"
+          width="900"
+          height="1200"
+          fetchpriority="high"
+        />
         <div class="hero__poster-tag">
           <span>@notyour.regularsaga</span>
         </div>
@@ -92,22 +122,22 @@
 
     <div class="perks">
       <article class="perk">
-        <div class="perk__ico">🎨</div>
+        <div class="perk__ico" aria-hidden="true">🎨</div>
         <h3>All materials provided</h3>
         <p>Canvas totes, fabric paints, brushes, palettes, stencils. Just show up.</p>
       </article>
       <article class="perk">
-        <div class="perk__ico">☕</div>
+        <div class="perk__ico" aria-hidden="true">☕</div>
         <h3>Refreshments included</h3>
         <p>Coffee, iced teas, and small bites while you paint. On the house.</p>
       </article>
       <article class="perk">
-        <div class="perk__ico">🌿</div>
+        <div class="perk__ico" aria-hidden="true">🌿</div>
         <h3>Guided, not gate-kept</h3>
         <p>Templates and inspiration boards if you want them. Total freedom if you don't.</p>
       </article>
       <article class="perk">
-        <div class="perk__ico">🫶</div>
+        <div class="perk__ico" aria-hidden="true">🫶</div>
         <h3>Come solo or paired</h3>
         <p>Great date idea, better girls'-day. Also perfect for a quiet solo reset.</p>
       </article>
@@ -119,34 +149,42 @@
     <div class="details__card">
       <div class="details__left">
         <span class="section__kicker">— Event Details —</span>
-        <h2 class="details__title">Sunday, 5<sup>th</sup> July</h2>
+        <p class="details__title">Sunday, 5<sup>th</sup> July 2026</p>
         <p class="details__quote">"A blank tote is just a canvas asking to be someone's favourite thing."</p>
       </div>
 
       <div class="details__grid">
         <div class="detail">
-          <div class="detail__ico">📅</div>
+          <div class="detail__ico" aria-hidden="true">📅</div>
           <div>
             <div class="detail__label">Date</div>
-            <div class="detail__value">5<sup>th</sup> July, Sunday</div>
+            <div class="detail__value">5<sup>th</sup> July 2026, Sunday</div>
           </div>
         </div>
         <div class="detail">
-          <div class="detail__ico">⏰</div>
+          <div class="detail__ico" aria-hidden="true">⏰</div>
           <div>
             <div class="detail__label">Time</div>
             <div class="detail__value">11:00 AM – 1:00 PM</div>
           </div>
         </div>
         <div class="detail">
-          <div class="detail__ico">👥</div>
+          <div class="detail__ico" aria-hidden="true">👥</div>
           <div>
             <div class="detail__label">Age Group</div>
             <div class="detail__value">16 and above</div>
           </div>
         </div>
+        <!-- price: update the ₹ value in one place if it changes -->
         <div class="detail">
-          <div class="detail__ico">📍</div>
+          <div class="detail__ico" aria-hidden="true">🎟️</div>
+          <div>
+            <div class="detail__label">Price</div>
+            <div class="detail__value">₹499 per person<br /><span class="detail__sub">all materials included</span></div>
+          </div>
+        </div>
+        <div class="detail detail--wide">
+          <div class="detail__ico" aria-hidden="true">📍</div>
           <div>
             <div class="detail__label">Venue</div>
             <div class="detail__value">Rangrez Art Studio<br /><span class="detail__sub">206–207, SPG Echelon,<br />Nr. Makarba Torrent Power</span></div>
@@ -167,24 +205,32 @@
       </p>
     </div>
 
-    <div class="peek__video-wrap">
+    <div class="peek__video-wrap" id="peekVideoWrap">
       <video
         id="peekVideo"
         class="peek__video"
         controls
         muted
         playsinline
+        loop
         preload="metadata"
-        poster="assets/images/tote-1.jpg"
+        poster="/assets/images/tote-1.jpg"
+        aria-label="Short clip from a past tote painting workshop"
       >
-        <source src="assets/video/workshop-preview.mp4" type="video/mp4" />
-        Your browser doesn't support the video tag.
+        <source src="/assets/video/workshop-preview.mp4" type="video/mp4" />
+        <!-- graceful fallback if <video> unsupported -->
+        <img src="/assets/images/tote-1.jpg" alt="Painters mid-workshop with paints and canvas totes" width="800" height="1000" loading="lazy" />
       </video>
+      <!-- shown by JS if the video fails to load -->
+      <div class="peek__fallback" hidden aria-live="polite">
+        <img src="/assets/images/tote-4.jpg" alt="A group workshop table with totes being painted" width="800" height="1000" loading="lazy" />
+        <p class="peek__fallback-note">Video coming soon — meanwhile, here's a still from a past session.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ================= GALLERY ================= -->
-  <section class="gallery" id="gallery">
+  <!-- ================= WORKSHOPS (was gallery) ================= -->
+  <section class="gallery" id="workshops">
     <div class="section__head">
       <span class="section__kicker">— From Past Workshops —</span>
       <h2 class="section__title">Every tote is a tiny world.</h2>
@@ -196,7 +242,13 @@
     <div class="grid">
       <figure class="card">
         <div class="card__media">
-          <img src="assets/images/tote-1.jpg" alt="Colourful abstract tote painted in blues, corals and orange" loading="lazy" />
+          <img
+            src="/assets/images/tote-1.jpg"
+            alt="Abstract tote painted in coral, blue and orange curves"
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
         </div>
         <figcaption>
           <h3>Colour without rules</h3>
@@ -207,7 +259,13 @@
 
       <figure class="card">
         <div class="card__media">
-          <img src="assets/images/tote-2.jpg" alt="Botanical monstera leaves stencilled onto a canvas tote" loading="lazy" />
+          <img
+            src="/assets/images/tote-2.jpg"
+            alt="A painter working on a sunflower and floral tote, with paint jars on the table"
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
         </div>
         <figcaption>
           <h3>Botanical, always</h3>
@@ -218,7 +276,13 @@
 
       <figure class="card">
         <div class="card__media">
-          <img src="assets/images/tote-3.jpg" alt="Cherry motif tote with a pink bow, in a soft pink palette" loading="lazy" />
+          <img
+            src="/assets/images/tote-3.jpg"
+            alt="Cherry motif tote with a pink bow, surrounded by paint pots and a pink camera"
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
         </div>
         <figcaption>
           <h3>Soft and specific</h3>
@@ -229,7 +293,13 @@
 
       <figure class="card">
         <div class="card__media">
-          <img src="assets/images/tote-4.jpg" alt="Group of friends painting totes together at a table" loading="lazy" />
+          <img
+            src="/assets/images/tote-4.jpg"
+            alt="Group workshop table — several friends painting sunflowers, hearts, and floral designs on totes together"
+            loading="lazy"
+            width="800"
+            height="1000"
+          />
         </div>
         <figcaption>
           <h3>Better with friends</h3>
@@ -250,28 +320,28 @@
 
     <div class="events__list">
       <article class="event">
-        <div class="event__date"><span class="event__day">05</span><span class="event__mon">JUL</span></div>
+        <div class="event__date" aria-hidden="true"><span class="event__day">05</span><span class="event__mon">JUL</span></div>
         <div class="event__body">
           <h3>Tote Painting Workshop</h3>
-          <p>Rangrez Art Studio · 11 AM – 1 PM · 16+</p>
+          <p>Rangrez Art Studio · 5<sup>th</sup> July 2026 · 11 AM – 1 PM · 16+</p>
         </div>
-        <span class="event__tag event__tag--live">Registering</span>
+        <span class="event__tag event__tag--live">Spots open</span>
       </article>
 
       <article class="event">
-        <div class="event__date"><span class="event__day">—</span><span class="event__mon">AUG</span></div>
+        <div class="event__date" aria-hidden="true"><span class="event__day">—</span><span class="event__mon">AUG</span></div>
         <div class="event__body">
           <h3>Journal Making Workshop</h3>
-          <p>Placeholder · Dates announcing soon</p>
+          <p>Dates announcing soon · August 2026</p>
         </div>
         <span class="event__tag">Soon</span>
       </article>
 
       <article class="event">
-        <div class="event__date"><span class="event__day">—</span><span class="event__mon">SEP</span></div>
+        <div class="event__date" aria-hidden="true"><span class="event__day">—</span><span class="event__mon">SEP</span></div>
         <div class="event__body">
           <h3>Block Print Sunday</h3>
-          <p>Placeholder · Dates announcing soon</p>
+          <p>Dates announcing soon · September 2026</p>
         </div>
         <span class="event__tag">Soon</span>
       </article>
@@ -335,6 +405,7 @@
   </section>
 
   <!-- ================= CONTACT ================= -->
+  <!-- TODO: wire this form to a backend (Formspree/Web3Forms). See FORM_ENDPOINT in script.js. -->
   <section class="contact" id="contact">
     <div class="contact__card">
       <div class="contact__left">
@@ -343,21 +414,20 @@
         <p>DM to register, or drop us a note if you're partnering, collaborating, or just curious.</p>
 
         <ul class="contact__list">
-          <li><span>Instagram</span><a href="https://instagram.com/notyour.regularsaga" target="_blank" rel="noopener">@notyour.regularsaga</a></li>
+          <li><span>Instagram</span><a href="https://instagram.com/notyour.regularsaga" target="_blank" rel="noopener noreferrer">@notyour.regularsaga</a></li>
           <li><span>Email</span><a href="mailto:hello@notyourregularsaga.com">hello@notyourregularsaga.com</a></li>
           <li><span>Studio</span><span>Rangrez Art Studio, 206–207 SPG Echelon, Nr. Makarba Torrent Power</span></li>
-          <li><span>Phone</span><span>+91 · placeholder</span></li>
         </ul>
       </div>
 
-      <form class="contact__form" onsubmit="event.preventDefault(); this.querySelector('.contact__sent').hidden = false; this.reset();">
+      <form class="contact__form" id="contactForm" novalidate>
         <label>
           <span>Your name</span>
-          <input type="text" name="name" placeholder="e.g. Ananya" required />
+          <input type="text" name="name" placeholder="e.g. Ananya" required autocomplete="name" />
         </label>
         <label>
           <span>Email or Instagram handle</span>
-          <input type="text" name="contact" placeholder="you@somewhere.com" required />
+          <input type="text" name="contact" placeholder="you@somewhere.com" required autocomplete="email" />
         </label>
         <label>
           <span>What's this about?</span>
@@ -372,8 +442,9 @@
           <span>A little message</span>
           <textarea name="message" rows="4" placeholder="Tell us a bit..."></textarea>
         </label>
-        <button type="submit" class="btn btn--primary">Send</button>
-        <p class="contact__sent" hidden>Got it — we'll reply soon. 🌿</p>
+        <button type="submit" class="btn btn--primary" data-default-text="Send">Send</button>
+        <p class="contact__sent" role="status" hidden>Got it — we'll reply soon. 🌿</p>
+        <p class="contact__err"  role="alert"  hidden>Something went wrong — please DM us on Instagram instead.</p>
       </form>
     </div>
   </section>
@@ -387,23 +458,33 @@
       </div>
       <div class="foot__links">
         <a href="#events">Events</a>
-        <a href="#gallery">Workshops</a>
+        <a href="#workshops">Workshops</a>
         <a href="#partnerships">Partner with us</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="foot__socials">
-        <a href="https://instagram.com/notyour.regularsaga" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://instagram.com/notyour.regularsaga" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
       </div>
     </div>
     <div class="foot__bottom">
-      © <span id="year"></span> notyour.regularsaga — made with paint under fingernails.
+      © 2026 notyour.regularsaga — made with paint under fingernails.
     </div>
   </footer>
 
+  <!-- ================= MOBILE STICKY BOTTOM BAR ================= -->
+  <div class="stickybar" aria-label="Register on Instagram">
+    <div class="stickybar__meta">
+      <span class="stickybar__date">Sun · 5<sup>th</sup> Jul 2026</span>
+      <span class="stickybar__price">₹499 · all materials</span>
+    </div>
+    <a href="https://ig.me/m/notyour.regularsaga" target="_blank" rel="noopener noreferrer" class="stickybar__cta">
+      Register on Instagram ↗
+    </a>
+  </div>
+
   <!-- ================= SVG SPRITE (flora) ================= -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
-      <!-- small sprig -->
       <symbol id="flora-sprig" viewBox="0 0 120 120">
         <g fill="none" stroke="#7A8B6B" stroke-width="2" stroke-linecap="round">
           <path d="M60 110 C60 80 55 55 40 30" />
@@ -420,8 +501,6 @@
           <circle cx="80" cy="60" r="2.6" opacity=".7" />
         </g>
       </symbol>
-
-      <!-- larger bloom -->
       <symbol id="flora-bloom" viewBox="0 0 120 120">
         <g transform="translate(60 60)">
           <g fill="#EBC7B4">
